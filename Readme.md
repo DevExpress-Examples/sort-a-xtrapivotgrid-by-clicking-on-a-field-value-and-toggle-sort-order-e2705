@@ -1,3 +1,9 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [Form1.cs](./CS/Form1.cs)
+* [Program.cs](./CS/Program.cs)
+<!-- default file list end -->
 # Sort a XtraPivotGrid by clicking on a field value and toggle sort order
 
 
