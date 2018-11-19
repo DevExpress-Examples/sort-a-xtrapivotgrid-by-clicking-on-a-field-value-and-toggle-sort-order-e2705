@@ -70,19 +70,19 @@ namespace Q205054 {
         private PivotSortOrder? GetSummarySortOrder(PivotFieldValueItem valueItem) {
             if(!valueItem.IsLastFieldLevel)
                 return null;
-            List<PivotGridFieldPair> pairs = valueItem.Data.VisualItems.GetSortedBySummaryFields(valueItem.IsColumn, valueItem.Index);
+            List<PivotGridFieldPair> pairs = valueItem.SortedBySummaryFields;
             if(pairs == null)
                 return null;
             PivotSortOrder? sortOrder = null;
             foreach(PivotGridFieldPair pair in pairs) {
                 if(pair.DataFieldItem != valueItem.DataField) continue;
                 if(sortOrder != null) {
-                    if(sortOrder.Value != pair.Field.SortOrder) {
+                    if(sortOrder.Value != pair.FieldItem.SortOrder) {
                         sortOrder = null;
                         break;
                     }
                 }
-                sortOrder = pair.Field.SortOrder;
+                sortOrder = pair.FieldItem.SortOrder;
             }
             return sortOrder;
         }
@@ -92,7 +92,7 @@ namespace Q205054 {
             PivotSortOrder? sortOrder = GetSummarySortOrder(valueItem);           
             if(sortOrder == null) 
                 return; // proceed to standard drawing
-            PivotGridViewInfoData data = (PivotGridViewInfoData)valueItem.Data;
+            PivotGridViewInfoData data = (PivotGridViewInfoData)valueItem.Data.EventArgsData;
             data.ActiveLookAndFeel.Painter.Header.DrawObject(e.Info);
 
 
