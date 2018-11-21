@@ -33,7 +33,7 @@ Namespace Q205054
 			Me.fieldProductName = New DevExpress.XtraPivotGrid.PivotGridField()
 			Me.fieldProductSales = New DevExpress.XtraPivotGrid.PivotGridField()
 			Me.fieldShippedDate = New DevExpress.XtraPivotGrid.PivotGridField()
-			Me.productReportsTableAdapter = New Q205054.nwindDataSetTableAdapters.ProductReportsTableAdapter()
+			Me.productReportsTableAdapter = New nwindDataSetTableAdapters.ProductReportsTableAdapter()
 			CType(Me.pivotGridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
 			CType(Me.productReportsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
 			CType(Me.nwindDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
