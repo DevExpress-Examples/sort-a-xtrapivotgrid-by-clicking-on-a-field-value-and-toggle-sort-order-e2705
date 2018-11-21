@@ -53,9 +53,6 @@
       <Private>True</Private>
       <HintPath>c:\Projects\Test_Examples\TestFolder\Dlls\11.1.4\DevExpress.PivotGrid.v11.1.Core.dll</HintPath>
     </Reference>
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>c:\Projects\Test_Examples\TestFolder\NUnit\nunit.framework.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
