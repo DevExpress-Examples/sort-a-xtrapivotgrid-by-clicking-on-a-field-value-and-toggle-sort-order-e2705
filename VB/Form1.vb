@@ -104,8 +104,8 @@ Namespace Q205054
 			If sortOrder Is Nothing Then
 				Return ' proceed to standard drawing
 			End If
-			Dim data As PivotGridViewInfoData = CType(valueItem.Data.EventArgsData, PivotGridViewInfoData)
-			data.ActiveLookAndFeel.Painter.Header.DrawObject(e.Info)
+            Dim data As PivotGridViewInfoData = CType(valueItem.Data, PivotGridViewInfoData)
+            data.ActiveLookAndFeel.Painter.Header.DrawObject(e.Info)
 
 
 			Dim sortInfo As New SortedShapeObjectInfoArgs()

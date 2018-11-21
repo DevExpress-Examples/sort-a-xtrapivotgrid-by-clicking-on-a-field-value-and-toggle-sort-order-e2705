@@ -92,7 +92,7 @@ namespace Q205054 {
             PivotSortOrder? sortOrder = GetSummarySortOrder(valueItem);           
             if(sortOrder == null) 
                 return; // proceed to standard drawing
-            PivotGridViewInfoData data = (PivotGridViewInfoData)valueItem.Data.EventArgsData;
+            PivotGridViewInfoData data = (PivotGridViewInfoData)valueItem.Data;
             data.ActiveLookAndFeel.Painter.Header.DrawObject(e.Info);
 
 
