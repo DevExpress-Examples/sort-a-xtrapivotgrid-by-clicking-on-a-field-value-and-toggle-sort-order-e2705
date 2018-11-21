@@ -78,8 +78,8 @@ Namespace Q205054
 			If Not valueItem.IsLastFieldLevel Then
 				Return Nothing
 			End If
-			Dim pairs As List(Of PivotGridFieldPair) = valueItem.SortedBySummaryFields
-			If pairs Is Nothing Then
+            Dim pairs As List(Of PivotGridFieldPair) = valueItem.Data.VisualItems.GetSortedBySummaryFields(valueItem.IsColumn, valueItem.Index)
+            If pairs Is Nothing Then
 				Return Nothing
 			End If
 			Dim sortOrder? As PivotSortOrder = Nothing

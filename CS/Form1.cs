@@ -70,8 +70,8 @@ namespace Q205054 {
         private PivotSortOrder? GetSummarySortOrder(PivotFieldValueItem valueItem) {
             if(!valueItem.IsLastFieldLevel)
                 return null;
-            List<PivotGridFieldPair> pairs = valueItem.SortedBySummaryFields;
-            if(pairs == null)
+            List<PivotGridFieldPair> pairs = valueItem.Data.VisualItems.GetSortedBySummaryFields(valueItem.IsColumn, valueItem.Index);
+            if (pairs == null)
                 return null;
             PivotSortOrder? sortOrder = null;
             foreach(PivotGridFieldPair pair in pairs) {
