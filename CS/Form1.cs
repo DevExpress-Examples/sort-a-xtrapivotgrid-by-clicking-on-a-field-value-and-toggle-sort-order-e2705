@@ -93,10 +93,9 @@ namespace Q205054 {
             PivotSortOrder? sortOrder = GetSummarySortOrder(valueItem);           
             if(sortOrder == null) 
                 return; // proceed to standard drawing
-            PivotGridViewInfoData data = (PivotGridViewInfoData)valueItem.Data;
+            PivotGridViewInfoData data = ((IPivotGridViewInfoDataOwner)pivotGridControl1).DataViewInfo;
+            e.Info.InnerElements.Clear();
             data.ActiveLookAndFeel.Painter.Header.DrawObject(e.Info);
-
-
             SortedShapeObjectInfoArgs sortInfo = new SortedShapeObjectInfoArgs();
             sortInfo.Ascending = sortOrder == PivotSortOrder.Ascending;
             sortInfo.Graphics = e.Graphics;
