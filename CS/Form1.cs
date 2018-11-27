@@ -25,8 +25,9 @@ namespace Q205054 {
 
         private void pivotGridControl1_MouseClick(object sender, MouseEventArgs e) {
             PivotGridHitInfo hInfo = pivotGridControl1.CalcHitInfo(e.Location);
-            if(hInfo.HitTest == PivotGridHitTest.Value)
+            if (hInfo.HitTest == PivotGridHitTest.Value) {
                 HandleValueMouseClick(hInfo.ValueInfo);
+            }
         }
 
         private void HandleValueMouseClick(PivotFieldValueEventArgs e) {
