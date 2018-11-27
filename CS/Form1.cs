@@ -88,14 +88,13 @@ namespace Q205054 {
         }
 
         private void pivotGridControl1_CustomDrawFieldValue(object sender, PivotCustomDrawFieldValueEventArgs e) {
-            PivotFieldValueItem valueItem = GetItem(e);            
-            PivotSortOrder? sortOrder = GetSummarySortOrder(valueItem);           
-            if(sortOrder == null) 
+            PivotFieldValueItem valueItem = GetItem(e);
+            PivotSortOrder? sortOrder = GetSummarySortOrder(valueItem);
+            if (sortOrder == null)
                 return; // proceed to standard drawing
-            PivotGridViewInfoData data = (PivotGridViewInfoData)valueItem.Data.EventArgsData;
+            PivotGridViewInfoData data = ((IPivotGridViewInfoDataOwner)pivotGridControl1).DataViewInfo;
+            e.Info.InnerElements.Clear();
             data.ActiveLookAndFeel.Painter.Header.DrawObject(e.Info);
-
-
             SortedShapeObjectInfoArgs sortInfo = new SortedShapeObjectInfoArgs();
             sortInfo.Ascending = sortOrder == PivotSortOrder.Ascending;
             sortInfo.Graphics = e.Graphics;
